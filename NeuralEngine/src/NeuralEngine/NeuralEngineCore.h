@@ -9,3 +9,6 @@
 #else 
 	#error Neural Engine Only Supports Windows!
 #endif // NE_PLATFORM_WINDOWS
+
+#define BIT(X) (1<<X)
+

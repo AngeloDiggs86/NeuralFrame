@@ -1,4 +1,7 @@
+#include "Event/ApplicationEvent.h"         
 #include "Application.h"
+#include "NeuralEngine/Log.h" 
+
 
 namespace NeuralEngine
 {
@@ -14,6 +17,16 @@ namespace NeuralEngine
 
 	void Application::Run()
 	{ 
-		while (true);
+		WindowResizeEvent e(1280, 720);
+		if (e.IsInCategory(EventCategoryApplication))
+		{
+			EN_CORE_TRACE(e);
+		}
+		if (e.IsInCategory(EventCategoryInput))
+		{
+			EN_CORE_TRACE(e);
+		}
+	
+		while (1);
 	}
 }
