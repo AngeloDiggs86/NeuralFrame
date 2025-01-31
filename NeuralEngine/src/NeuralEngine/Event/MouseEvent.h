@@ -1,5 +1,6 @@
 #include "Enpch.h"
 #include "Event.h"
+#include <sstream>
 
 namespace NeuralEngine {
 

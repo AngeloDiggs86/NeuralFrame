@@ -51,6 +51,12 @@ project "NeuralEngine"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+	
+	buildoptions 
+    { 
+        "/utf-8" -- Enables UTF-8 encoding
+        --"/D%(PreprocessorDefinitions)" -- Appends preprocessor definitions
+    }
 
 	defines 
 	{

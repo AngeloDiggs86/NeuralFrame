@@ -17,7 +17,7 @@ namespace NeuralEngine
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallBack(BIND_EVENT(OnEvent));
 	}
-	
+
 	Application::~Application()
 	{
 
@@ -52,16 +52,16 @@ namespace NeuralEngine
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)
-	{
+		{
 		m_Running = false;
 		return m_Running;
-	}
+		}
 
 	void Application::PushLayer(Layer* layer)
-	{
+		{
 		m_LayerStack.PushLayer(layer);
-	}
-
+		}
+	
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
