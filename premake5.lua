@@ -1,0 +1,140 @@
+workspace "NeuralEngine"
+	architecture "x64" 
+
+	configurations
+	{
+		"Debug",
+		"Release",
+		"Dist"
+	}
+
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "NeuralEngine/vendor/GLFW/include"
+
+include "NeuralEngine/vendor/GLFW"
+
+project "NeuralEngine"
+	location "NeuralEngine"
+	kind "SharedLib"
+	language "C++"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "Enpch.h"
+	pchsource "NeuralEngine/src/Enpch.cpp"
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
+	}
+
+	characterset "MBCS" -- Set Character Set to Multi-Byte Character Set
+
+	filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+
+	defines 
+	{
+		"NE_PLATFORM_WINDOWS",
+		"NE_BUILD_DLL",
+		"_WINDLL"
+	}
+
+	postbuildcommands
+	{
+		("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+	}
+
+	filter "configurations:Debug"
+		defines "NE_DEBUG"
+		buildoptions {"/MDd" , "/utf-8"}
+		symbols "On"
+
+	filter "configurations:Release"
+		defines "NE_RELEASE"
+		buildoptions {"/MD" , "/utf-8"}
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "NE_DIST"
+		buildoptions {"/MD" , "/utf-8"}
+		optimize "On"
+
+project "Sandbox"
+	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"NeuralEngine/vendor/spdlog/include",
+		"NeuralEngine/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"NeuralEngine"
+	}
+
+	characterset "MBCS" -- Set Character Set to Multi-Byte Character Set
+
+	filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+	
+	buildoptions 
+    { 
+        "/utf-8" -- Enables UTF-8 encoding
+        --"/D%(PreprocessorDefinitions)" -- Appends preprocessor definitions
+    }
+
+	defines 
+	{
+		"NE_PLATFORM_WINDOWS",
+		"_MBCS"
+	}
+
+	filter "configurations:Debug"
+		defines "NE_DEBUG"
+		buildoptions {"/MDd" , "/utf-8"}
+		symbols "On"
+
+	filter "configurations:Release"
+		defines "NE_RELEASE"
+		buildoptions {"/MD" , "/utf-8"}
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "NE_DIST"
+		buildoptions {"/MD" , "/utf-8"}
+		optimize "On"

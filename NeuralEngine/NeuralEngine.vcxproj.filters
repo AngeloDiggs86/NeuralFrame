@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="NeuralEngine">
+      <UniqueIdentifier>{026F1340-EED1-A2E4-9757-DB9A83996E67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeuralEngine\Event">
+      <UniqueIdentifier>{D3A9644F-BF8D-25A5-28EE-1FF814F10F27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeuralEngine\Platform">
+      <UniqueIdentifier>{96AD233E-021A-DF38-CB0D-7796373901A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Enpch.h" />
+    <ClInclude Include="src\NeuralEngine.h" />
+    <ClInclude Include="src\NeuralEngine\Application.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\EntryPoint.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Event\ApplicationEvent.h">
+      <Filter>NeuralEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Event\Event.h">
+      <Filter>NeuralEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Event\KeyEvent.h">
+      <Filter>NeuralEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Event\MouseEvent.h">
+      <Filter>NeuralEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Layer.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\LayerStack.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Log.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Platform\WinWindow.h">
+      <Filter>NeuralEngine\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Window.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Enpch.cpp" />
+    <ClCompile Include="src\NeuralEngine\Application.cpp">
+      <Filter>NeuralEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NeuralEngine\Layer.cpp">
+      <Filter>NeuralEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NeuralEngine\LayerStack.cpp">
+      <Filter>NeuralEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NeuralEngine\Log.cpp">
+      <Filter>NeuralEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NeuralEngine\Platform\WinWindow.cpp">
+      <Filter>NeuralEngine\Platform</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
