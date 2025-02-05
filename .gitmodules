@@ -1,6 +1,3 @@
 [submodule "NeuralEngine/vendor/spdlog"]
 	path = NeuralEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "NeuralEngine/vendor/GLFW"]
-	path = NeuralEngine/vendor/GLFW
-	url = https://github.com/TheCherno/GLFW
