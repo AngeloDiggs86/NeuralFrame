@@ -72,17 +72,17 @@ project "NeuralEngine"
 
 	filter "configurations:Debug"
 		defines "NE_DEBUG"
-		buildoptions {"/MDd" , "/utf-8"}
+		buildoptions {"/MDd", "/utf-8"}
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NE_RELEASE"
-		buildoptions {"/MD" , "/utf-8"}
+		buildoptions {"/MT","/utf-8"}
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "NE_DIST"
-		buildoptions {"/MD" , "/utf-8"}
+		buildoptions {"/MT","/utf-8"}
 		optimize "On"
 
 project "Sandbox"
@@ -132,15 +132,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "NE_DEBUG"
-		buildoptions {"/MDd" , "/utf-8"}
+		buildoptions {"/MDd", "/utf-8"}
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NE_RELEASE"
-		buildoptions {"/MD" , "/utf-8"}
+		buildoptions {"/MT","/utf-8"}
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "NE_DIST"
-		buildoptions {"/MD" , "/utf-8"}
+		buildoptions {"/MT","/utf-8"}
 		optimize "On"
