@@ -3,11 +3,10 @@
 #include "NeuralEngine/Log.h"  // Include the logging system
 
 #include "Event/MouseEvent.h"  // Include event classes for mouse events
-
-#include "GLFW/glfw3.h"  // Include GLFW for window management
-
 // Macro to bind events to the appropriate member function of Application class
 # define BIND_EVENT(X) std::bind(&Application::X, this, std::placeholders::_1)
+
+#include "glad/glad.h"
 
 namespace NeuralEngine
 {
@@ -19,6 +18,9 @@ namespace NeuralEngine
 
 		// Set the event callback to the OnEvent method of Application
 		m_Window->SetEventCallBack(BIND_EVENT(OnEvent));
+
+		unsigned int id;
+		glGenVertexArrays(1,&id);
 	}
 
 	// Destructor for the Application class

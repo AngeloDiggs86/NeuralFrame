@@ -1,6 +1,8 @@
 #include "Enpch.h"  // Include precompiled header for faster compilation
 #include "WinWindow.h"  // Include window class header for platform-specific window handling
 
+#include "glad/glad.h"
+
 namespace NeuralEngine
 {
 	// Static variable to track if GLFW has been initialized
@@ -32,9 +34,10 @@ namespace NeuralEngine
 		// Create a window with the specified dimensions and title
 		m_Window = glfwCreateWindow((int)m_data.width, (int)m_data.height, m_data.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);  // Set the current context for OpenGL rendering
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		glfwSetWindowUserPointer(m_Window, &m_data);  // Associate the window data with the GLFW window
 		glfwSwapInterval(1);  // Enable V-Sync (swap buffers every frame)
-
+		
 		// Set callback for window resizing
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 			{

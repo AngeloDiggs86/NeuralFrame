@@ -6,8 +6,7 @@
 #include "NeuralEngine/Event/KeyEvent.h"  
 #include "NeuralEngine/Event/MouseEvent.h"  
 
-#include "GLFW/glfw3.h"  // Include GLFW for window management
-
+#include "GLFW/glfw3.h"
 namespace NeuralEngine
 {
 	// WinWindow is a platform-specific implementation of the Window class using GLFW

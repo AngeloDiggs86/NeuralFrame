@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "NeuralEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "NeuralEngine/vendor/Glad/include"
 
 include "NeuralEngine/vendor/GLFW"
+include "NeuralEngine/vendor/Glad"
 
 project "NeuralEngine"
 	location "NeuralEngine"
@@ -36,12 +38,14 @@ project "NeuralEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -62,7 +66,8 @@ project "NeuralEngine"
 	{
 		"NE_PLATFORM_WINDOWS",
 		"NE_BUILD_DLL",
-		"_WINDLL"
+		"_WINDLL",
+		"GLFW_INCLUDE_NONE"
 	}
 
 	postbuildcommands
@@ -103,7 +108,9 @@ project "Sandbox"
 	{
 		"NeuralEngine/vendor/spdlog/include",
 		"NeuralEngine/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
+		
 	}
 
 	links
