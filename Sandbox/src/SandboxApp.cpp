@@ -24,7 +24,8 @@ public:
 
 	SandBox()
 	{
-		PushLayer(new ExampleLayer);
+		//PushLayer(new ExampleLayer);
+		PushOverlay(new NeuralEngine::ImGuiLayer);
 	}
 
 	~SandBox()

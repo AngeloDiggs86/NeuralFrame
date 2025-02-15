@@ -7,8 +7,14 @@
     <Filter Include="NeuralEngine\Event">
       <UniqueIdentifier>{D3A9644F-BF8D-25A5-28EE-1FF814F10F27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NeuralEngine\ImGui">
+      <UniqueIdentifier>{AC9DA74F-9881-68A5-01E2-62F8EDE45227}</UniqueIdentifier>
+    </Filter>
     <Filter Include="NeuralEngine\Platform">
       <UniqueIdentifier>{96AD233E-021A-DF38-CB0D-7796373901A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeuralEngine\Platform\OpenGL">
+      <UniqueIdentifier>{0A728E66-F62C-7E12-9FE4-F65C8B7EC8A2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +38,9 @@
     <ClInclude Include="src\NeuralEngine\Event\MouseEvent.h">
       <Filter>NeuralEngine\Event</Filter>
     </ClInclude>
+    <ClInclude Include="src\NeuralEngine\ImGui\ImGuiLayer.h">
+      <Filter>NeuralEngine\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\NeuralEngine\Layer.h">
       <Filter>NeuralEngine</Filter>
     </ClInclude>
@@ -43,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h">
       <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.h">
+      <Filter>NeuralEngine\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imgui_impl_opengl3_loader.h">
+      <Filter>NeuralEngine\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\Platform\WinWindow.h">
       <Filter>NeuralEngine\Platform</Filter>
@@ -56,6 +71,9 @@
     <ClCompile Include="src\NeuralEngine\Application.cpp">
       <Filter>NeuralEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\NeuralEngine\ImGui\ImGuiLayer.cpp">
+      <Filter>NeuralEngine\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\NeuralEngine\Layer.cpp">
       <Filter>NeuralEngine</Filter>
     </ClCompile>
@@ -64,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="src\NeuralEngine\Log.cpp">
       <Filter>NeuralEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.cpp">
+      <Filter>NeuralEngine\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\NeuralEngine\Platform\WinWindow.cpp">
       <Filter>NeuralEngine\Platform</Filter>

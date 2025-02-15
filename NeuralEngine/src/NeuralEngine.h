@@ -10,6 +10,7 @@
 #include "NeuralEngine/Application.h"
 #include "NeuralEngine/Layer.h"
 #include "NeuralEngine/Log.h"
+#include "NeuralEngine/ImGui/ImGuiLayer.h"
 //----------------Entry Point------------------------
 
 #include "NeuralEngine/EntryPoint.h"

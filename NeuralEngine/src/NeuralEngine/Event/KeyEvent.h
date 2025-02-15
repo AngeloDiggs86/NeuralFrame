@@ -70,4 +70,24 @@ namespace NeuralEngine
         // Macro to define the event type as KeyReleased
         EVENT_CLASS_TYPE(KeyReleased)
     };
+
+    class NEURAL_ENGINE_API KeyTypedEvent : public KeyEvent
+    {
+    public:
+        // Constructor initializing keycode and whether the key press is a repeat
+        KeyTypedEvent(const int keycode)
+            : KeyEvent(keycode) {
+        }
+
+        // Convert the event to a string representation
+        std::string ToString() const override
+        {
+            std::stringstream ss;
+            ss << "KeyTypedEvent: " << m_keyCode;  // Format output
+            return ss.str();
+        }
+
+        // Macro to define the event type as KeyPressed
+        EVENT_CLASS_TYPE(KeyTyped)
+    };
 }

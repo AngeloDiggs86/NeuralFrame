@@ -10,17 +10,17 @@
 
 namespace NeuralEngine
 {
+
+	Application* Application::s_Instance = nullptr;
 	// The Application class is the main entry point and controller for the engine
 	Application::Application()
 	{
+		s_Instance = this;
 		// Create the window and store it in m_Window
 		m_Window = std::unique_ptr<Window>(Window::Create());
 
 		// Set the event callback to the OnEvent method of Application
 		m_Window->SetEventCallBack(BIND_EVENT(OnEvent));
-
-		unsigned int id;
-		glGenVertexArrays(1,&id);
 	}
 
 	// Destructor for the Application class
@@ -65,6 +65,7 @@ namespace NeuralEngine
 			{
 				layer->OnUpdate();  // Update each layer
 			}
+			m_Window->SwapBuffers();
 		}
 	}
 
@@ -79,11 +80,13 @@ namespace NeuralEngine
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	// Push an overlay layer onto the layer stack (overlays are rendered on top of layers)
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 }

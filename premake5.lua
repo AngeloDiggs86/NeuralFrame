@@ -13,9 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "NeuralEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "NeuralEngine/vendor/Glad/include"
+IncludeDir["ImGui"] = "NeuralEngine/vendor/imgui"
 
 include "NeuralEngine/vendor/GLFW"
 include "NeuralEngine/vendor/Glad"
+include "NeuralEngine/vendor/imgui"
 
 project "NeuralEngine"
 	location "NeuralEngine"
@@ -39,13 +41,15 @@ project "NeuralEngine"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 

@@ -31,6 +31,10 @@ namespace NeuralEngine
 		// Main loop to run the application
 		void Run();
 
+		inline Window& GetWindow() { return *m_Window; }
+
+		inline static Application& Get() { return *s_Instance; }
+
 	private:
 		// Pointer to the window object, unique pointer ensures automatic memory management
 		std::unique_ptr<Window> m_Window;
@@ -40,6 +44,8 @@ namespace NeuralEngine
 
 		// Layer stack to manage and update all layers in the application
 		LayerStack m_LayerStack;
+
+		static Application* s_Instance;
 	};
 
 	// To be defined in the client code, used to create the application instance

@@ -37,7 +37,7 @@ namespace NeuralEngine
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		glfwSetWindowUserPointer(m_Window, &m_data);  // Associate the window data with the GLFW window
 		glfwSwapInterval(1);  // Enable V-Sync (swap buffers every frame)
-		
+
 		// Set callback for window resizing
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 			{
@@ -112,6 +112,12 @@ namespace NeuralEngine
 					break;
 				}
 			});
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keyCode)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypedEvent event(keyCode);
+				data.callback(event);
+			});
 
 		// Set callback for mouse scrolling events
 		glfwSetScrollCallback(m_Window, [](GLFWwindow* window, double xoffset, double yoffset)
@@ -151,7 +157,6 @@ namespace NeuralEngine
 	void  WinWindow::PollEvents()
 	{
 		glfwPollEvents();  // Process all pending events
-		SwapBuffers();  // Swap the front and back buffers for rendering
 	}
 
 	// Swap the front and back buffers
