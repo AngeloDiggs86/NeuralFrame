@@ -22,7 +22,7 @@ namespace NeuralEngine
 		m_data.height = WinProp.height;
 
 		// Log window details to the console
-		EN_CORE_INFO("Window Details: {0} , {1} , {2}", m_data.title, m_data.width, m_data.height);
+		NE_CORE_INFO("Window Details: {0} , {1} , {2}", m_data.title, m_data.width, m_data.height);
 
 		// Initialize GLFW if not already initialized
 		if (!s_GLFWInitialized)

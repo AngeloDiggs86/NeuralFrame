@@ -34,6 +34,8 @@ namespace NeuralEngine
 		// Shut down the window (e.g., destroy GLFW window)
 		void ShutDown() override;
 
+		inline virtual void* GetNativeWindow() const { return m_Window; }
+
 		// Get the width of the window
 		unsigned int GetWidth() const override {
 			return m_data.width;

@@ -9,7 +9,12 @@ namespace NeuralEngine
     class NEURAL_ENGINE_API Layer {
     public:
         // Constructor for the Layer class that accepts a name for debugging purposes
-        Layer(std::string name) : m_DebugName(name) {};
+        //Layer(std::string name) : m_DebugName(name) {};
+
+        Layer(std::string name)
+        {
+            m_DebugName = name;
+        }
 
         // Virtual destructor, allows proper cleanup of derived classes
         virtual ~Layer() = default;

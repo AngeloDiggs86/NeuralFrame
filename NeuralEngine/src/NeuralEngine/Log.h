@@ -21,16 +21,16 @@ namespace NeuralEngine {
 	};
 
 	// Core Log Macros
-	#define EN_CORE_ERROR(...)		::NeuralEngine::Log::GetCoreLogger()->error(__VA_ARGS__)
-	#define EN_CORE_WARN(...)		::NeuralEngine::Log::GetCoreLogger()->warn(__VA_ARGS__)
-	#define EN_CORE_INFO(...)		::NeuralEngine::Log::GetCoreLogger()->info(__VA_ARGS__)
-	#define EN_CORE_TRACE(...)		::NeuralEngine::Log::GetCoreLogger()->trace(__VA_ARGS__)
-	#define EN_CORE_FATAL(...)		::NeuralEngine::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+	#define NE_CORE_ERROR(...)		::NeuralEngine::Log::GetCoreLogger()->error(__VA_ARGS__)
+	#define NE_CORE_WARN(...)		::NeuralEngine::Log::GetCoreLogger()->warn(__VA_ARGS__)
+	#define NE_CORE_INFO(...)		::NeuralEngine::Log::GetCoreLogger()->info(__VA_ARGS__)
+	#define NE_CORE_TRACE(...)		::NeuralEngine::Log::GetCoreLogger()->trace(__VA_ARGS__)
+	#define NE_CORE_FATAL(...)		::NeuralEngine::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
 	// Core Log Macros
-	#define EN_CLIENT_ERROR(...)	::NeuralEngine::Log::GetClientLogger()->error(__VA_ARGS__)
-	#define EN_CLIENT_WARN(...)		::NeuralEngine::Log::GetClientLogger()->warn(__VA_ARGS__)
-	#define EN_CLIENT_INFO(...)		::NeuralEngine::Log::GetClientLogger()->info(__VA_ARGS__)
-	#define EN_CLIENT_TRACE(...)    ::NeuralEngine::Log::GetClientLogger()->trace(__VA_ARGS__)
-	#define EN_CLIENT_FATAL(...)    ::NeuralEngine::Log::GetClientLogger()->fatal(__VA_ARGS__)
+	#define NE_CLIENT_ERROR(...)	::NeuralEngine::Log::GetClientLogger()->error(__VA_ARGS__)
+	#define NE_CLIENT_WARN(...)		::NeuralEngine::Log::GetClientLogger()->warn(__VA_ARGS__)
+	#define NE_CLIENT_INFO(...)		::NeuralEngine::Log::GetClientLogger()->info(__VA_ARGS__)
+	#define NE_CLIENT_TRACE(...)    ::NeuralEngine::Log::GetClientLogger()->trace(__VA_ARGS__)
+	#define NE_CLIENT_FATAL(...)    ::NeuralEngine::Log::GetClientLogger()->fatal(__VA_ARGS__)
 }

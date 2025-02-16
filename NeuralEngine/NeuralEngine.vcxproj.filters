@@ -16,6 +16,9 @@
     <Filter Include="NeuralEngine\Platform\OpenGL">
       <UniqueIdentifier>{0A728E66-F62C-7E12-9FE4-F65C8B7EC8A2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NeuralEngine\Platform\Windows">
+      <UniqueIdentifier>{D08D7890-3CA6-5FBA-0553-EF53712AF453}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Enpch.h" />
@@ -41,6 +44,12 @@
     <ClInclude Include="src\NeuralEngine\ImGui\ImGuiLayer.h">
       <Filter>NeuralEngine\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Input.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\KeyCodes.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\NeuralEngine\Layer.h">
       <Filter>NeuralEngine</Filter>
     </ClInclude>
@@ -48,6 +57,9 @@
       <Filter>NeuralEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\Log.h">
+      <Filter>NeuralEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\MouseCodes.h">
       <Filter>NeuralEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h">
@@ -59,8 +71,11 @@
     <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imgui_impl_opengl3_loader.h">
       <Filter>NeuralEngine\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\NeuralEngine\Platform\WinWindow.h">
-      <Filter>NeuralEngine\Platform</Filter>
+    <ClInclude Include="src\NeuralEngine\Platform\Windows\WinWindow.h">
+      <Filter>NeuralEngine\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Platform\Windows\WindowsInput.h">
+      <Filter>NeuralEngine\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\Window.h">
       <Filter>NeuralEngine</Filter>
@@ -86,8 +101,11 @@
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.cpp">
       <Filter>NeuralEngine\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\NeuralEngine\Platform\WinWindow.cpp">
-      <Filter>NeuralEngine\Platform</Filter>
+    <ClCompile Include="src\NeuralEngine\Platform\Windows\WinWindow.cpp">
+      <Filter>NeuralEngine\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NeuralEngine\Platform\Windows\WindowsInput.cpp">
+      <Filter>NeuralEngine\Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

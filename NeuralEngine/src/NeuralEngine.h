@@ -9,6 +9,11 @@
 
 #include "NeuralEngine/Application.h"
 #include "NeuralEngine/Layer.h"
+
+#include "NeuralEngine/Input.h"
+#include "NeuralEngine/KeyCodes.h"
+#include "NeuralEngine/MouseCodes.h"
+
 #include "NeuralEngine/Log.h"
 #include "NeuralEngine/ImGui/ImGuiLayer.h"
 //----------------Entry Point------------------------

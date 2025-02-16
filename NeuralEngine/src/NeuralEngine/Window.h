@@ -42,6 +42,8 @@ namespace NeuralEngine
 		// Pure virtual method to shut down the window and clean up resources
 		virtual void ShutDown() = 0;
 
+		virtual void* GetNativeWindow() const = 0;
+
 		// Type alias for the callback function signature used for event handling
 		using EventCallBackFn = std::function<void(Event&)>;
 

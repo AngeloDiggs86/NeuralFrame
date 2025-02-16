@@ -7,6 +7,7 @@
 # define BIND_EVENT(X) std::bind(&Application::X, this, std::placeholders::_1)
 
 #include "glad/glad.h"
+#include "Input.h"
 
 namespace NeuralEngine
 {
@@ -65,6 +66,7 @@ namespace NeuralEngine
 			{
 				layer->OnUpdate();  // Update each layer
 			}
+
 			m_Window->SwapBuffers();
 		}
 	}

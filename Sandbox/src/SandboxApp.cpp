@@ -9,12 +9,15 @@ public:
 
 	void OnUpdate() override
 	{
-		EN_CLIENT_INFO("ExampleLayer:Update");
+		//NE_CLIENT_INFO("ExampleLayer:Update");
+
+		if(NeuralEngine::Input::IsKeyPressed(NE_KEY_TAB))
+			NE_CLIENT_INFO("Tab key is pressed!");
 	}
 
 	void OnEvent(NeuralEngine::Event& event) override
 	{
-		EN_CLIENT_TRACE("{0}", event);
+		//NE_CLIENT_TRACE("{0}", event);
 	}
 };
 
@@ -24,7 +27,7 @@ public:
 
 	SandBox()
 	{
-		//PushLayer(new ExampleLayer);
+		PushLayer(new ExampleLayer());
 		PushOverlay(new NeuralEngine::ImGuiLayer);
 	}
 

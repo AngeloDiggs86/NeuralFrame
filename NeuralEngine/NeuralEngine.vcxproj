@@ -83,8 +83,8 @@
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -110,8 +110,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MT /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -138,8 +138,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MT /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -164,13 +164,17 @@
     <ClInclude Include="src\NeuralEngine\Event\KeyEvent.h" />
     <ClInclude Include="src\NeuralEngine\Event\MouseEvent.h" />
     <ClInclude Include="src\NeuralEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\NeuralEngine\Input.h" />
+    <ClInclude Include="src\NeuralEngine\KeyCodes.h" />
     <ClInclude Include="src\NeuralEngine\Layer.h" />
     <ClInclude Include="src\NeuralEngine\LayerStack.h" />
     <ClInclude Include="src\NeuralEngine\Log.h" />
+    <ClInclude Include="src\NeuralEngine\MouseCodes.h" />
     <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h" />
     <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.h" />
     <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="src\NeuralEngine\Platform\WinWindow.h" />
+    <ClInclude Include="src\NeuralEngine\Platform\Windows\WinWindow.h" />
+    <ClInclude Include="src\NeuralEngine\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\NeuralEngine\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +187,8 @@
     <ClCompile Include="src\NeuralEngine\LayerStack.cpp" />
     <ClCompile Include="src\NeuralEngine\Log.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\NeuralEngine\Platform\WinWindow.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\Windows\WinWindow.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
