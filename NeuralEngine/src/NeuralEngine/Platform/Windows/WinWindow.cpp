@@ -13,6 +13,11 @@ namespace NeuralEngine
 		ShutDown();
 	}
 
+	void WinWindow::SwapBuffer()
+	{
+		glfwSwapBuffers(m_Window);  // Swap the current OpenGL buffers
+	}
+
 	// Initialize the window with specified properties
 	bool WinWindow::Init(const WindowProperties& WinProp)
 	{
@@ -36,7 +41,7 @@ namespace NeuralEngine
 		glfwMakeContextCurrent(m_Window);  // Set the current context for OpenGL rendering
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		glfwSetWindowUserPointer(m_Window, &m_data);  // Associate the window data with the GLFW window
-		glfwSwapInterval(1);  // Enable V-Sync (swap buffers every frame)
+		SetVSync(true);
 
 		// Set callback for window resizing
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
@@ -147,28 +152,30 @@ namespace NeuralEngine
 		Init(WinProp);
 	}
 
-	// Check if the window should close
-	bool WinWindow::ShouldClose() const
-	{
-		return true;  // Always return true (this could be adjusted for actual close logic)
-	}
-
-	// Poll window events (e.g., keyboard, mouse) and swap buffers
-	void  WinWindow::PollEvents()
-	{
-		glfwPollEvents();  // Process all pending events
-	}
-
-	// Swap the front and back buffers
-	void  WinWindow::SwapBuffers()
-	{
-		glfwSwapBuffers(m_Window);  // Swap the current OpenGL buffers
-	}
-
 	// Clean up and shut down the window (destroy GLFW window)
 	void WinWindow::ShutDown()
 	{
 		glfwDestroyWindow(m_Window);  // Destroy the GLFW window and clean up resources
+	}
+
+	void WinWindow::OnUpdate()
+	{
+		glfwPollEvents();  // Process all pending events
+	}
+
+	void WinWindow::SetVSync(bool enabled)
+	{
+		if(enabled)
+			glfwSwapInterval(1);  // Enable V-Sync (swap buffers every frame)
+		else
+			glfwSwapInterval(0);  
+
+		m_data.VSync = enabled;
+	}
+
+	bool WinWindow::IsVSync() const
+	{
+		return m_data.VSync;
 	}
 
 	// Factory method to create a new window instance

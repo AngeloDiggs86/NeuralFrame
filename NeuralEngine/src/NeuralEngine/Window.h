@@ -24,14 +24,12 @@ namespace NeuralEngine
 		// Pure virtual method to initialize the window with specific properties
 		virtual bool Init(const WindowProperties& WinProp) = 0;
 
-		// Pure virtual method to check if the window should close (e.g., from user input)
-		virtual bool ShouldClose() const = 0;
+		// Type alias for the callback function signature used for event handling
+		using EventCallbackFn = std::function<void(Event&)>;
 
-		// Pure virtual method to handle events like input or window events
-		virtual void PollEvents() = 0;
+		virtual void SwapBuffer() = 0;
 
-		// Pure virtual method to swap buffers for rendering
-		virtual void SwapBuffers() = 0;
+		virtual void OnUpdate() = 0;
 
 		// Pure virtual method to get the window's width
 		virtual unsigned int GetWidth() const = 0;
@@ -39,16 +37,18 @@ namespace NeuralEngine
 		// Pure virtual method to get the window's height
 		virtual unsigned int GetHeight() const = 0;
 
+		// Pure virtual method to set the callback function for handling events
+		virtual void SetEventCallBack(const EventCallbackFn& callback) = 0;
+
+		virtual void SetVSync(bool enabled) = 0;
+
+		virtual bool IsVSync() const = 0;
+	
 		// Pure virtual method to shut down the window and clean up resources
 		virtual void ShutDown() = 0;
 
 		virtual void* GetNativeWindow() const = 0;
 
-		// Type alias for the callback function signature used for event handling
-		using EventCallBackFn = std::function<void(Event&)>;
-
-		// Pure virtual method to set the callback function for handling events
-		virtual void SetEventCallBack(const EventCallBackFn& callback) = 0;
 
 		// Static factory method to create and initialize a window object
 		static Window* Create(const WindowProperties& WinProp = WindowProperties());

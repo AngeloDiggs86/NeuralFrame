@@ -14,6 +14,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "NeuralEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "NeuralEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "NeuralEngine/vendor/imgui"
+IncludeDir["glm"] = "NeuralEngine/vendor/glm"
 
 include "NeuralEngine/vendor/GLFW"
 include "NeuralEngine/vendor/Glad"
@@ -43,7 +44,8 @@ project "NeuralEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -116,7 +118,8 @@ project "Sandbox"
 		"NeuralEngine/vendor/spdlog/include",
 		"NeuralEngine/src",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.glm}"
 		
 	}
 

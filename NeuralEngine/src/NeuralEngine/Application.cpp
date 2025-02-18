@@ -3,8 +3,6 @@
 #include "NeuralEngine/Log.h"  // Include the logging system
 
 #include "Event/MouseEvent.h"  // Include event classes for mouse events
-// Macro to bind events to the appropriate member function of Application class
-# define BIND_EVENT(X) std::bind(&Application::X, this, std::placeholders::_1)
 
 #include "glad/glad.h"
 #include "Input.h"
@@ -54,26 +52,24 @@ namespace NeuralEngine
 		// The application continues running while m_Running is true
 		while (m_Running)
 		{
-			// Set the clear color to purple and clear the color buffer
-			glClearColor(1, 0, 1, 1);
+			glClearColor(1,0,1,1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			// Poll events (e.g., keyboard, mouse) for the window
-			m_Window->PollEvents();
+			m_Window->OnUpdate();
 
-			// Update all layers in the layer stack
 			for (Layer* layer : m_LayerStack)
 			{
-				layer->OnUpdate();  // Update each layer
+				layer->OnUpdate();
 			}
 
-			m_Window->SwapBuffers();
+			m_Window->SwapBuffer();
 		}
 	}
 
 	// Method to handle the WindowCloseEvent, sets m_Running to false to exit the application
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
+
 		m_Running = false;  // Stop the application
 		return m_Running;
 	}

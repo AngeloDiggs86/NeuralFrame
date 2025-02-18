@@ -19,20 +19,19 @@ namespace NeuralEngine
 		// Destructor to clean up and release resources
 		virtual ~WinWindow();
 
+		virtual void SwapBuffer() override;
+
 		// Initialize the window with given properties (overrides base class method)
 		bool Init(const WindowProperties& WinProp) override;
 
-		// Check if the window should close (overrides base class method)
-		bool ShouldClose() const override;
-
-		// Poll for events (keyboard, mouse, etc.) and swap buffers for rendering
-		void PollEvents() override;
-
-		// Swap the front and back buffers for rendering
-		void SwapBuffers() override;
-
 		// Shut down the window (e.g., destroy GLFW window)
 		void ShutDown() override;
+
+		void OnUpdate() override;
+
+		inline void SetVSync(bool enabled) override;
+
+		bool IsVSync() const override;
 
 		inline virtual void* GetNativeWindow() const { return m_Window; }
 
@@ -47,7 +46,7 @@ namespace NeuralEngine
 		}
 
 		// Set the event callback function to handle window events
-		void SetEventCallBack(const EventCallBackFn& callback) override
+		void SetEventCallBack(const EventCallbackFn& callback) override
 		{
 			m_data.callback = callback;  // Store the callback function in window data
 		}
@@ -61,7 +60,8 @@ namespace NeuralEngine
 		{
 			std::string title = "";  // Window title
 			unsigned int width = 0, height = 0;  // Window dimensions (width, height)
-			EventCallBackFn callback = EventCallBackFn();  // Event callback function
+			bool VSync;
+			EventCallbackFn callback = EventCallbackFn();  // Event callback function
 		};
 
 		// Instance of WindowData to store the current window properties

@@ -1,11 +1,10 @@
 #include "NeuralEngine.h"
 
-
 class ExampleLayer : public NeuralEngine::Layer
 {
 public:
 	ExampleLayer() :
-		Layer("Layer Example"){ }
+		Layer("Layer Example") {}
 
 	void OnUpdate() override
 	{
@@ -28,7 +27,7 @@ public:
 	SandBox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new NeuralEngine::ImGuiLayer);
+		//PushOverlay(new NeuralEngine::ImGuiLayer);
 	}
 
 	~SandBox()

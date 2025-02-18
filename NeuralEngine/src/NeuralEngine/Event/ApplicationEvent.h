@@ -3,6 +3,8 @@
 /*
 All ToString functions are for debug only and will be removed for release build.
 */
+// Macro to bind events to the appropriate member function of Application class
+# define BIND_EVENT(X) std::bind(&Application::X, this, std::placeholders::_1)
 namespace NeuralEngine
 {
 	// Represents an event for window resizing
