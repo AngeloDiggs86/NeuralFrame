@@ -3,6 +3,7 @@
 #include "LayerStack.h"  // Include the header for managing layer stack
 #include "Window.h"  // Include the window management header
 #include "Event/ApplicationEvent.h"  // Include application-related event classes
+#include "NeuralEngine/ImGui/ImGuiLayer.h"
 
 namespace NeuralEngine
 {
@@ -38,7 +39,7 @@ namespace NeuralEngine
 	private:
 		// Pointer to the window object, unique pointer ensures automatic memory management
 		std::unique_ptr<Window> m_Window;
-
+		ImGuiLayer* m_ImGuiLayer;
 		// Flag to track if the application is running
 		bool m_Running = true;
 

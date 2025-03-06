@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NE_PLATFORM_WINDOWS;_MBCS;NE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\NeuralEngine\vendor\spdlog\include;..\NeuralEngine\src;..\NeuralEngine\vendor\GLFW\include;..\NeuralEngine\vendor\Glad\include;..\NeuralEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\NeuralEngine\vendor\spdlog\include;..\NeuralEngine\src;..\NeuralEngine\vendor\GLFW\include;..\NeuralEngine\vendor\Glad\include;..\NeuralEngine\vendor\glm;..\NeuralEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -97,7 +97,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NE_PLATFORM_WINDOWS;_MBCS;NE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\NeuralEngine\vendor\spdlog\include;..\NeuralEngine\src;..\NeuralEngine\vendor\GLFW\include;..\NeuralEngine\vendor\Glad\include;..\NeuralEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\NeuralEngine\vendor\spdlog\include;..\NeuralEngine\src;..\NeuralEngine\vendor\GLFW\include;..\NeuralEngine\vendor\Glad\include;..\NeuralEngine\vendor\glm;..\NeuralEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +119,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NE_PLATFORM_WINDOWS;_MBCS;NE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\NeuralEngine\vendor\spdlog\include;..\NeuralEngine\src;..\NeuralEngine\vendor\GLFW\include;..\NeuralEngine\vendor\Glad\include;..\NeuralEngine\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\NeuralEngine\vendor\spdlog\include;..\NeuralEngine\src;..\NeuralEngine\vendor\GLFW\include;..\NeuralEngine\vendor\Glad\include;..\NeuralEngine\vendor\glm;..\NeuralEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

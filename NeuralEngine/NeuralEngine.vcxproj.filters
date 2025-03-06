@@ -13,9 +13,6 @@
     <Filter Include="NeuralEngine\Platform">
       <UniqueIdentifier>{96AD233E-021A-DF38-CB0D-7796373901A1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NeuralEngine\Platform\OpenGL">
-      <UniqueIdentifier>{0A728E66-F62C-7E12-9FE4-F65C8B7EC8A2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="NeuralEngine\Platform\Windows">
       <UniqueIdentifier>{D08D7890-3CA6-5FBA-0553-EF53712AF453}</UniqueIdentifier>
     </Filter>
@@ -41,6 +38,9 @@
     <ClInclude Include="src\NeuralEngine\Event\MouseEvent.h">
       <Filter>NeuralEngine\Event</Filter>
     </ClInclude>
+    <ClInclude Include="src\NeuralEngine\ImGui\ImGuiBuid.h">
+      <Filter>NeuralEngine\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\NeuralEngine\ImGui\ImGuiLayer.h">
       <Filter>NeuralEngine\ImGui</Filter>
     </ClInclude>
@@ -64,12 +64,6 @@
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h">
       <Filter>NeuralEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.h">
-      <Filter>NeuralEngine\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imgui_impl_opengl3_loader.h">
-      <Filter>NeuralEngine\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\Platform\Windows\WinWindow.h">
       <Filter>NeuralEngine\Platform\Windows</Filter>
@@ -97,9 +91,6 @@
     </ClCompile>
     <ClCompile Include="src\NeuralEngine\Log.cpp">
       <Filter>NeuralEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.cpp">
-      <Filter>NeuralEngine\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WinWindow.cpp">
       <Filter>NeuralEngine\Platform\Windows</Filter>

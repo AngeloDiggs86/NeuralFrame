@@ -9,12 +9,7 @@ namespace NeuralEngine
     class NEURAL_ENGINE_API Layer {
     public:
         // Constructor for the Layer class that accepts a name for debugging purposes
-        //Layer(std::string name) : m_DebugName(name) {};
-
-        Layer(std::string name)
-        {
-            m_DebugName = name;
-        }
+        Layer(std::string name) : m_DebugName(name) {};
 
         // Virtual destructor, allows proper cleanup of derived classes
         virtual ~Layer() = default;
@@ -30,6 +25,8 @@ namespace NeuralEngine
 
         // Method to handle events for the layer (used to process events specific to this layer)
         virtual void OnEvent(Event& e) {}
+
+        virtual void OnImGuiRender() {}
 
         // Inline method to get the name of the layer for debugging purposes
         inline const std::string GetName() { return m_DebugName; }

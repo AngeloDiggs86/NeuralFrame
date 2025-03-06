@@ -119,7 +119,8 @@ project "Sandbox"
 		"NeuralEngine/src",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}"
 		
 	}
 

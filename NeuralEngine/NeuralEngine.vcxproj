@@ -163,6 +163,7 @@
     <ClInclude Include="src\NeuralEngine\Event\Event.h" />
     <ClInclude Include="src\NeuralEngine\Event\KeyEvent.h" />
     <ClInclude Include="src\NeuralEngine\Event\MouseEvent.h" />
+    <ClInclude Include="src\NeuralEngine\ImGui\ImGuiBuid.h" />
     <ClInclude Include="src\NeuralEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\NeuralEngine\Input.h" />
     <ClInclude Include="src\NeuralEngine\KeyCodes.h" />
@@ -171,8 +172,6 @@
     <ClInclude Include="src\NeuralEngine\Log.h" />
     <ClInclude Include="src\NeuralEngine\MouseCodes.h" />
     <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h" />
-    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="src\NeuralEngine\Platform\Windows\WinWindow.h" />
     <ClInclude Include="src\NeuralEngine\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\NeuralEngine\Window.h" />
@@ -186,7 +185,6 @@
     <ClCompile Include="src\NeuralEngine\Layer.cpp" />
     <ClCompile Include="src\NeuralEngine\LayerStack.cpp" />
     <ClCompile Include="src\NeuralEngine\Log.cpp" />
-    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\imGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WinWindow.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>

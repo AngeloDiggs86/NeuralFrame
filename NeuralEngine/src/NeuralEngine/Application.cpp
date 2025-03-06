@@ -2,7 +2,7 @@
 #include "Application.h"  // Include the header for the Application class
 #include "NeuralEngine/Log.h"  // Include the logging system
 
-#include "Event/MouseEvent.h"  // Include event classes for mouse events
+//#include "Event/MouseEvent.h"  // Include event classes for mouse events
 
 #include "glad/glad.h"
 #include "Input.h"
@@ -20,6 +20,9 @@ namespace NeuralEngine
 
 		// Set the event callback to the OnEvent method of Application
 		m_Window->SetEventCallBack(BIND_EVENT(OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	// Destructor for the Application class
@@ -52,15 +55,15 @@ namespace NeuralEngine
 		// The application continues running while m_Running is true
 		while (m_Running)
 		{
-			glClearColor(1,0,1,1);
+			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			m_Window->OnUpdate();
 
+			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
-			{
-				layer->OnUpdate();
-			}
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
 
 			m_Window->SwapBuffer();
 		}
@@ -69,7 +72,6 @@ namespace NeuralEngine
 	// Method to handle the WindowCloseEvent, sets m_Running to false to exit the application
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
-
 		m_Running = false;  // Stop the application
 		return m_Running;
 	}

@@ -1,4 +1,5 @@
 #include "NeuralEngine.h"
+#include "imgui.h"
 
 class ExampleLayer : public NeuralEngine::Layer
 {
@@ -8,10 +9,15 @@ public:
 
 	void OnUpdate() override
 	{
-		//NE_CLIENT_INFO("ExampleLayer:Update");
-
 		if(NeuralEngine::Input::IsKeyPressed(NE_KEY_TAB))
 			NE_CLIENT_INFO("Tab key is pressed!");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World!");
+		ImGui::End();
 	}
 
 	void OnEvent(NeuralEngine::Event& event) override
@@ -27,7 +33,6 @@ public:
 	SandBox()
 	{
 		PushLayer(new ExampleLayer());
-		//PushOverlay(new NeuralEngine::ImGuiLayer);
 	}
 
 	~SandBox()
