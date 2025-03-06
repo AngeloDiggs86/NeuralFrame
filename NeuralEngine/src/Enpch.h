@@ -7,6 +7,8 @@
     standard containers, memory management, string manipulation, and the NeuralEngine logging system.
 */
 
+#define _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS
+
 #include <iostream>
 #include <memory>
 #include <utility>

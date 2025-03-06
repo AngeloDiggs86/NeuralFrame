@@ -22,9 +22,10 @@ include "NeuralEngine/vendor/imgui"
 
 project "NeuralEngine"
 	location "NeuralEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -56,53 +57,53 @@ project "NeuralEngine"
 		"opengl32.lib"
 	}
 
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
 	characterset "MBCS" -- Set Character Set to Multi-Byte Character Set
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
-	
-	buildoptions 
-    { 
-        "/utf-8" -- Enables UTF-8 encoding
-    }
+		
+		buildoptions 
+		{ 
+			"/utf-8" -- Enables UTF-8 encoding
+		}
 
-	defines 
-	{
-		"NE_PLATFORM_WINDOWS",
-		"NE_BUILD_DLL",
-		"_WINDLL",
-		"GLFW_INCLUDE_NONE"
-	}
-
-	postbuildcommands
-	{
-		("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-	}
+		defines 
+		{
+			"NE_PLATFORM_WINDOWS",
+			"NE_BUILD_DLL",
+			"_WINDLL",
+			"GLFW_INCLUDE_NONE"
+		}
 
 	filter "configurations:Debug"
 		defines "NE_DEBUG"
 		runtime "Debug"
-		buildoptions "/utf-8"
-		symbols "On"
+		--buildoptions {"/utf-8", "/MDd"}
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "NE_RELEASE"
 		runtime "Release"
-		buildoptions "/utf-8"
-		optimize "On"
+		--buildoptions "/utf-8"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "NE_DIST"
 		runtime "Release"
-		buildoptions "/utf-8"
-		optimize "On"
+		--buildoptions "/utf-8"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -121,7 +122,6 @@ project "Sandbox"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.ImGui}"
-		
 	}
 
 	links
@@ -132,33 +132,30 @@ project "Sandbox"
 	characterset "MBCS" -- Set Character Set to Multi-Byte Character Set
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "off"
 		systemversion "latest"
 	
-	buildoptions 
-    { 
-        "/utf-8" -- Enables UTF-8 encoding
-        --"/D%(PreprocessorDefinitions)" -- Appends preprocessor definitions
-    }
+		buildoptions 
+		{ 
+			"/utf-8" -- Enables UTF-8 encoding
+		}
 
-	defines 
-	{
-		"NE_PLATFORM_WINDOWS",
-		"_MBCS"
-	}
+		defines 
+		{
+			"NE_PLATFORM_WINDOWS",
+			"_MBCS"
+		}
 
 	filter "configurations:Debug"
 		defines "NE_DEBUG"
-		buildoptions "/utf-8"
-		symbols "On"
+		--buildoptions "/utf-8"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "NE_RELEASE"
-		buildoptions "/utf-8"
-		optimize "On"
+		--buildoptions "/utf-8"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "NE_DIST"
-		buildoptions "/utf-8"
-		optimize "On"
+		--buildoptions "/utf-8"
+		optimize "on"
