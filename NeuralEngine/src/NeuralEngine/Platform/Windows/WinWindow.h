@@ -7,6 +7,8 @@
 #include "NeuralEngine/Event/MouseEvent.h"  
 
 #include "GLFW/glfw3.h"
+#include "NeuralEngine/Platform/OpenGL/OpenGLContext.h"
+
 namespace NeuralEngine
 {
 	// WinWindow is a platform-specific implementation of the Window class using GLFW
@@ -55,6 +57,7 @@ namespace NeuralEngine
 		// Pointer to the GLFW window
 		GLFWwindow* m_Window;
 
+		GraphicsContext* m_Context;
 		// Structure to store window data (title, width, height, and callback)
 		struct WindowData
 		{

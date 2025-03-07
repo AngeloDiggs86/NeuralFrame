@@ -165,6 +165,8 @@
     <ClInclude Include="src\NeuralEngine\NeuralEngineCore.h" />
     <ClInclude Include="src\NeuralEngine\Platform\Windows\WinWindow.h" />
     <ClInclude Include="src\NeuralEngine\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\NeuralEngine\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +178,7 @@
     <ClCompile Include="src\NeuralEngine\Layer.cpp" />
     <ClCompile Include="src\NeuralEngine\LayerStack.cpp" />
     <ClCompile Include="src\NeuralEngine\Log.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WinWindow.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>

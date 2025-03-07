@@ -74,6 +74,8 @@
     <ClInclude Include="src\NeuralEngine\Window.h">
       <Filter>NeuralEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\NeuralEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Enpch.cpp" />
@@ -98,5 +100,6 @@
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WindowsInput.cpp">
       <Filter>NeuralEngine\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

@@ -46,6 +46,8 @@ namespace NeuralEngine
 		// Layer stack to manage and update all layers in the application
 		LayerStack m_LayerStack;
 
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+
 		static Application* s_Instance;
 	};
 

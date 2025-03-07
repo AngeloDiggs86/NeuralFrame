@@ -8,6 +8,7 @@
 */
 
 #define _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS
+#define FMT_HEADER_ONLY
 
 #include <iostream>
 #include <memory>

@@ -13,10 +13,6 @@ namespace NeuralEngine
 		ShutDown();
 	}
 
-	void WinWindow::SwapBuffer()
-	{
-		glfwSwapBuffers(m_Window);  // Swap the current OpenGL buffers
-	}
 
 	// Initialize the window with specified properties
 	bool WinWindow::Init(const WindowProperties& WinProp)
@@ -38,8 +34,10 @@ namespace NeuralEngine
 
 		// Create a window with the specified dimensions and title
 		m_Window = glfwCreateWindow((int)m_data.width, (int)m_data.height, m_data.title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);  // Set the current context for OpenGL rendering
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+
 		glfwSetWindowUserPointer(m_Window, &m_data);  // Associate the window data with the GLFW window
 		SetVSync(true);
 
@@ -156,6 +154,11 @@ namespace NeuralEngine
 	void WinWindow::ShutDown()
 	{
 		glfwDestroyWindow(m_Window);  // Destroy the GLFW window and clean up resources
+	}
+
+	void WinWindow::SwapBuffer()
+	{
+		m_Context->SwapBuffer();
 	}
 
 	void WinWindow::OnUpdate()
