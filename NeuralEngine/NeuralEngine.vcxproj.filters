@@ -76,6 +76,10 @@
     </ClInclude>
     <ClInclude Include="src\NeuralEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Enpch.cpp" />
@@ -101,5 +105,9 @@
       <Filter>NeuralEngine\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLBuffer.cpp" />
   </ItemGroup>
 </Project>
