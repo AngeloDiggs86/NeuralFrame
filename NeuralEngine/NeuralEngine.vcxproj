@@ -171,6 +171,7 @@
     <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\NeuralEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\NeuralEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\VertexArray.h" />
     <ClInclude Include="src\NeuralEngine\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -184,11 +185,14 @@
     <ClCompile Include="src\NeuralEngine\Log.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WinWindow.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\NeuralEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="src\NeuralEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="src\NeuralEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

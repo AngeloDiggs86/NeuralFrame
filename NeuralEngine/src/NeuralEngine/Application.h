@@ -6,6 +6,8 @@
 #include "NeuralEngine/ImGui/ImGuiLayer.h"
 #include "NeuralEngine/Renderer/Shader.h"
 #include "NeuralEngine/Renderer/Buffer.h"
+#include "NeuralEngine/Renderer/VertexArray.h"
+
 
 namespace NeuralEngine
 {
@@ -48,10 +50,11 @@ namespace NeuralEngine
 		// Layer stack to manage and update all layers in the application
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexArray;
-		std::unique_ptr<Shader> m_Shader;
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer>  m_IndexBuffer;
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<Shader> m_BlueShader; // Temp
+		std::shared_ptr<VertexArray>  m_VertexArray;
+		std::shared_ptr<VertexArray>  m_SquareVA;
+
 		static Application* s_Instance;
 	};
 
