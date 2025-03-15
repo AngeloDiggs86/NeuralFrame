@@ -7,7 +7,7 @@
 #include "NeuralEngine/Renderer/Shader.h"
 #include "NeuralEngine/Renderer/Buffer.h"
 #include "NeuralEngine/Renderer/VertexArray.h"
-
+#include "NeuralEngine/Renderer/OrthoCamera.h"
 
 namespace NeuralEngine
 {
@@ -54,6 +54,8 @@ namespace NeuralEngine
 		std::shared_ptr<Shader> m_BlueShader; // Temp
 		std::shared_ptr<VertexArray>  m_VertexArray;
 		std::shared_ptr<VertexArray>  m_SquareVA;
+
+		OrthoCamera m_Camera;
 
 		static Application* s_Instance;
 	};

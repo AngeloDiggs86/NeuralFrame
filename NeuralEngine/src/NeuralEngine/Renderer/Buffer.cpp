@@ -9,8 +9,8 @@ namespace NeuralEngine
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None:		NE_CORE_ERROR("RendererAPI::None is not currently supported!"); return nullptr;
-		case RendererAPI::OpenGL:   return new OpenGLVertexBuffer(vertices, size); 
+		case RendererAPI::API::None:		NE_CORE_ERROR("RendererAPI::None is not currently supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:		return new OpenGLVertexBuffer(vertices, size); 
 		}
 		NE_CORE_ERROR("Unknown RendererAPI!");
 		return nullptr;
@@ -20,8 +20,8 @@ namespace NeuralEngine
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None:		NE_CORE_ERROR("RendererAPI::None is not currently supported!"); return nullptr;
-		case RendererAPI::OpenGL:   return new OpenGLIndexBuffer(indices, count);
+		case RendererAPI::API::None:		NE_CORE_ERROR("RendererAPI::None is not currently supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:		return new OpenGLIndexBuffer(indices, count);
 		}
 		NE_CORE_ERROR("Unknown RendererAPI!");
 		return nullptr;

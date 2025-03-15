@@ -81,6 +81,12 @@
     <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\NeuralEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\NeuralEngine\Renderer\VertexArray.h" />
+    <ClInclude Include="src\NeuralEngine\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\Camera.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\OrthoCamera.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\NeuralEngine\Renderer\ShaderParser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Enpch.cpp" />
@@ -113,5 +119,13 @@
     <ClCompile Include="src\NeuralEngine\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\NeuralEngine\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\OrthoCamera.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\NeuralEngine\Renderer\ShaderParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\NeuralEngine\Renderer\Shaders\Basic.shader" />
   </ItemGroup>
 </Project>

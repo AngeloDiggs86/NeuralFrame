@@ -9,8 +9,8 @@ namespace NeuralEngine
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None:		NE_CORE_ERROR("RendererAPI::None is not currently supported!"); return nullptr;
-		case RendererAPI::OpenGL:   return new OpenGLVertexArray();
+		case RendererAPI::API::None:		NE_CORE_ERROR("RendererAPI::None is not currently supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:      return new OpenGLVertexArray();
 		}
 		NE_CORE_ERROR("Unknown RendererAPI!");
 		return nullptr;

@@ -4,8 +4,10 @@
 
 //#include "Event/MouseEvent.h"  // Include event classes for mouse events
 
-#include "glad/glad.h"
 #include "Input.h"
+
+#include "NeuralEngine/Renderer/Renderer.h"
+
 
 namespace NeuralEngine
 {
@@ -13,6 +15,7 @@ namespace NeuralEngine
 	// The Application class is the main entry point and controller for the engine
 
 	Application::Application()
+		:m_Camera(-2.0f, 2.0f, -2.0f, 2.0)
 	{
 		s_Instance = this;
 		// Create the window and store it in m_Window
@@ -83,6 +86,8 @@ namespace NeuralEngine
 			
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
+			
+			uniform mat4 u_ViewProj;
 
 			out vec3 v_Position;
 			out vec4 v_Color;
@@ -91,7 +96,7 @@ namespace NeuralEngine
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);
+				gl_Position = u_ViewProj * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -99,6 +104,7 @@ namespace NeuralEngine
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
+
 
 			in vec3 v_Position;
 			in vec4 v_Color;
@@ -116,14 +122,16 @@ namespace NeuralEngine
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
-
+				
+			uniform mat4 u_ViewProj;
+				
 			out vec3 v_Position;
 		
 
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = vec4(a_Position, 1.0);
+				gl_Position = u_ViewProj * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -173,17 +181,23 @@ namespace NeuralEngine
 		// The application continues running while m_Running is true
 		while (m_Running)
 		{
-			glClearColor(0.1f, 0.1f, 0.1f, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			
 
-			m_BlueShader->Bind();
-			m_SquareVA->Bind();
-			glDrawElements(GL_TRIANGLES, m_SquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+			RenderCommand::Clear();
 
-			m_Shader->Bind();
-			m_VertexArray->Bind();
+			m_Camera.SetPosition({0.5f, 0.5f, 0.0f});
+			m_Camera.SetRotation(45.0f);
 
-			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::BeginScene(m_Camera);
+
+			Renderer::EndScene();
+
+			Renderer::Submit(m_SquareVA, m_BlueShader);
+
+			Renderer::Submit(m_VertexArray, m_Shader);
+
+			Renderer::EndScene();
 
 			m_Window->OnUpdate();
 
